@@ -1,0 +1,155 @@
+#root {
+  margin: 0 auto;
+  text-align: center;
+}
+
+body {
+  font-family: 'NestleText', sans-serif;
+  font-size: 1.3rem;
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: 'NestleText';
+  src: url(./fonts/NestleText-Book.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'NestleText';
+  src: url(./fonts/NestleText-Bold.woff) format('woff');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'NestleText';
+  src: url(./fonts/NestleText-Italic.woff) format('woff');
+  font-style: italic;
+}
+
+.primary-button {
+  background-color: white;
+  color: black;
+}
+
+.title-card {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  height: fit-content;
+}
+
+.title-card img {
+  display: block;
+  width: 100vw;
+  max-width: 100%;
+}
+
+.title-card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5));
+}
+
+.title-card h1 {
+  position: absolute;
+  top: 76%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 5rem;
+}
+
+.main-body {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: left;
+  margin: 50px 10%;
+}
+
+.main-body p.par {
+  margin: 26px 0 0 0;
+  text-align: justify;
+}
+
+.highlight {
+  color: #00818f;
+}
+
+.main-form {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: left;
+  align-items: flex-start;
+  gap: 0px;
+}
+
+.main-form p {
+  margin: 20px 0 10px 0;
+}
+
+.diet-options {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: left;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.diet-options button {
+  background-color: white;
+  color: #2d8cc2;
+  border: 1px solid #2d8cc2;
+  border-radius: 2px;
+  width: 100px;
+  padding: 5px 10px;
+  text-align: left;
+  transition: 0.1s;
+}
+
+.diet-options button:hover {
+  scale: 1.05;
+  cursor: pointer;
+}
+
+.diet-options button.active-btn {
+  background-color: #00818f;
+  color: white;
+}
+
+.main-form input[type="text"] {
+  width: 100%;
+  padding: 5px;
+  margin: 0;
+  border: 1px solid #adadad;
+  border-radius: 2px;
+  color: #747474;
+}
+
+.main-form select {
+  width: 100%;
+  padding: 5px;
+  margin: 0;
+  border: 1px solid #adadad;
+  border-radius: 2px;
+  color: #747474;
+}
+
+.main-form button[type="submit"] {
+  background-color: #00818f;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  padding: 10px 25px;
+  margin: 30px 0;
+  transition: 0.1s;
+  font-size: 1.1rem;
+}
+
+.recipe {
+  text-align: left;
+}
