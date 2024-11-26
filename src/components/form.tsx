@@ -13,8 +13,8 @@ export default function Form({ onSubmit } : FormProps) {
 
   const [alergias, setAlergias] = useState("");
   const [tipoCocina, setTipoCocina] = useState("");
-  const [dificultad, setDificultad] = useState("facil"); 
-  const [tiempoPreparacion, setTiempoPreparacion] = useState("menos de 30 minutos");
+  const [dificultad, setDificultad] = useState("baja"); 
+  const [tiempoPreparacion, setTiempoPreparacion] = useState("15");
   const [ingredientes, setIngredientes] = useState("");
 
   const handleSubmit = async (event: any) => {
@@ -31,7 +31,7 @@ export default function Form({ onSubmit } : FormProps) {
       tiempoPreparacion,
       ingredientes
     };
-    console.log(formData);
+    //console.log(formData);
     onSubmit(formData);
   }
 
@@ -50,15 +50,15 @@ export default function Form({ onSubmit } : FormProps) {
     <input type="text" placeholder="Ej: mexicana, italiana, chilena, etc." onChange={e => setTipoCocina(e.target.value)} />
     <p className="highlight">Dificultad:</p>
     <select onChange={e => setDificultad(e.target.value)}>
-      <option value="facil">Fácil</option>
-      <option value="intermedio">Intermedio</option>
-      <option value="dificil">Difícil</option>
+      <option value="baja">Fácil</option>
+      <option value="mediana">Intermedio</option>
+      <option value="alta">Difícil</option>
     </select>
     <p className="highlight">Tiempo de preparación:</p>
     <select onChange={e => setTiempoPreparacion(e.target.value)}>
-      <option value="menos de 30 minutos">Menos de 30 minutos</option>
-      <option value="entre 30 y 60 minutos">Entre 30 y 60 minutos</option>
-      <option value="mas de 60 minutos">Más de 60 minutos</option>
+      <option value="15">Menos de 30 minutos</option>
+      <option value="30">Entre 30 y 60 minutos</option>
+      <option value="60">Más de 60 minutos</option>
     </select>
     <p className="highlight">Ingredientes disponibles:</p>
     <input type="text" placeholder="Ej: pollo, arroz, tomate, etc." onChange={e => setIngredientes(e.target.value)} />
