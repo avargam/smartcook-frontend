@@ -150,6 +150,11 @@ body {
   font-size: 1.1rem;
 }
 
+.main-form button[type="submit"]:hover {
+  scale: 1.05;
+  cursor: pointer;
+}
+
 .recipe {
   text-align: left;
 }
@@ -164,4 +169,70 @@ body {
   transition: 0.1s;
   font-size: 1.1rem;
   width: fit-content;
+}
+
+.modify-btn:hover {
+  scale: 1.05;
+  cursor: pointer;
+}
+
+.modal {
+  width: 50%;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-start;
+  padding: 30px;
+  background-color: rgba(255, 255, 255, 0.95);
+  border: 2px solid #cbcbcb;
+  border-radius: 5px;
+}
+
+.modal form {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.modal input {
+  width: 100%;
+  padding: 5px;
+  margin: 5px 0;
+  border: 1px solid #adadad;
+  border-radius: 2px;
+  color: #747474;
+}
+
+.modal-buttons {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  width: auto;
+  margin: 25px 0px 5px 0;
+  gap: 20px;
+}
+
+.modal-buttons .submit-button {
+  background-color: #00818f;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  padding: 5px 25px;
+  transition: 0.1s;
+  font-size: 1.1rem;
+}
+
+.modal-buttons .submit-button:hover, .modal-buttons .cancel-button:hover {
+  scale: 1.05;
+  cursor: pointer;
+}
+
+.modal-buttons .cancel-button {
+  background-color: #cbcbcb;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  padding: 5px 25px;
+  transition: 0.1s;
+  font-size: 1.1rem;
 }

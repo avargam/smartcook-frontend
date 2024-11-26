@@ -8,6 +8,7 @@ export default function MainBody({} : {}) {
 
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [recipe, setRecipe] = useState({})
+
   const callAPI = async (formData: any) => {
 
     /* const dietOptions = [
@@ -47,6 +48,15 @@ export default function MainBody({} : {}) {
     setRecipe(data)
   }
 
+  const callAPIModify = async (formData: any) => {
+    const data = {
+      Name: "Pasta con salsa de tomate",
+      Ingredients: ["Pasta", "Tomates", "Aceite de oliva", "Sal", "Pimienta"],
+      Recipe: "1. Cocinar la pasta en agua hirviendo con sal. \n2. En una sartén, sofreír los tomates en aceite de oliva. \n3. Mezclar la salsa con la pasta y servir caliente."
+    }
+    setRecipe(data)
+  }
+
   return <div className="main-body">
     <p className='par'> 
       En Nestlé, creemos que la alimentación puede ser un motor de cambio positivo, no solo para nuestras
@@ -61,6 +71,6 @@ export default function MainBody({} : {}) {
     </p>
     <Form onSubmit={ callAPI }/>
     { Object.keys(recipe).length > 0 ? <><Recipe content={ recipe } /><ModifyButton onSubmit={() => setIsModalOpen(prev => !prev) }/></> : null}
-    { isModalOpen ? <Modal/> : null }
+    { isModalOpen ? <Modal modal={ isModalOpen } setModal={ setIsModalOpen } onSubmit={ callAPIModify }/> : null }
   </div>
 }
