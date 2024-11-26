@@ -182,7 +182,7 @@ body {
   flex-flow: column nowrap;
   align-items: flex-start;
   padding: 30px;
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: rgba(255, 255, 255, 0.97);
   border: 2px solid #cbcbcb;
   border-radius: 5px;
 }
@@ -235,4 +235,8 @@ body {
   padding: 5px 25px;
   transition: 0.1s;
   font-size: 1.1rem;
+}
+
+pre {
+  white-space:pre-wrap;
 }

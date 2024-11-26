@@ -11,7 +11,7 @@ export default function MainBody({} : {}) {
 
   const callAPI = async (formData: any) => {
 
-    /* const dietOptions = [
+    const dietOptions = [
       formData.veggie && "Vegetarian",
       formData.vegan && "Vegan",
       formData.kosher && "Kosher",
@@ -28,32 +28,31 @@ export default function MainBody({} : {}) {
       "cuis": formData.tipoCocina
     }
 
-    console.log(postData)
+    console.log(postData);
 
-    const response = await fetch('http://localho.st:8080/form', {
+    const response = await fetch('http://localhost:8080/form', {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'mode': 'no-cors'
-      },
       body: JSON.stringify(postData)
     });
     const data = await response.json()
-    console.log(data) */
-    const data = {
-      Name: "Pasta con salsa de tomate",
-      Ingredients: ["Pasta", "Tomates", "Cebolla", "Ajo", "Aceite de oliva", "Sal", "Pimienta"],
-      Recipe: "1. Cocinar la pasta en agua hirviendo con sal. \n2. En una sartén, sofreír la cebolla y el ajo en aceite de oliva. \n3. Agregar los tomates y cocinar a fuego lento. \n4. Mezclar la salsa con la pasta y servir caliente."
-    }
+    console.log(data)
+
     setRecipe(data)
   }
 
   const callAPIModify = async (formData: any) => {
-    const data = {
-      Name: "Pasta con salsa de tomate",
-      Ingredients: ["Pasta", "Tomates", "Aceite de oliva", "Sal", "Pimienta"],
-      Recipe: "1. Cocinar la pasta en agua hirviendo con sal. \n2. En una sartén, sofreír los tomates en aceite de oliva. \n3. Mezclar la salsa con la pasta y servir caliente."
+    const postData = {
+      "add": formData.ingredientesAgregar,
+      "rm": formData.ingredientesEliminar
     }
+
+    console.log(postData);
+
+    const response = await fetch('http://localhost:8080/recipe', {
+      method: 'POST',
+      body: JSON.stringify(postData)
+    });
+    const data = await response.json()
     setRecipe(data)
   }
 

@@ -31,7 +31,6 @@ export default function Form({ onSubmit } : FormProps) {
       tiempoPreparacion,
       ingredientes
     };
-    //console.log(formData);
     onSubmit(formData);
   }
 
