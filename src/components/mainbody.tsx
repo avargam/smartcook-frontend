@@ -3,11 +3,13 @@ import Form from './form'
 import Recipe from './recipe'
 import ModifyButton from './modifybutton'
 import Modal from './modal'
+import History from './history'
 
 export default function MainBody({} : {}) {
 
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [recipe, setRecipe] = useState({})
+  const [history, setHistory] = useState({})
 
   const callAPI = async (formData: any) => {
 
@@ -34,10 +36,9 @@ export default function MainBody({} : {}) {
       method: 'POST',
       body: JSON.stringify(postData)
     });
-    const data = await response.json()
-    console.log(data)
-
-    setRecipe(data)
+    const data = await response.json();
+    console.log(data);
+    setRecipe(data);
   }
 
   const callAPIModify = async (formData: any) => {
@@ -52,8 +53,18 @@ export default function MainBody({} : {}) {
       method: 'POST',
       body: JSON.stringify(postData)
     });
-    const data = await response.json()
-    setRecipe(data)
+    const data = await response.json();
+    setRecipe(data);
+  }
+
+  const callAPIHistory = async () => {
+    
+    const response = await fetch('http://localhost:8080/history', {
+      method: 'GET'
+    });
+    const data = await response.json();
+    console.log(data);
+    setHistory(data);
   }
 
   return <div className="main-body">
@@ -71,5 +82,6 @@ export default function MainBody({} : {}) {
     <Form onSubmit={ callAPI }/>
     { Object.keys(recipe).length > 0 ? <><Recipe content={ recipe } /><ModifyButton onSubmit={() => setIsModalOpen(prev => !prev) }/></> : null}
     { isModalOpen ? <Modal modal={ isModalOpen } setModal={ setIsModalOpen } onSubmit={ callAPIModify }/> : null }
+    <History content={ history } onRequest={ callAPIHistory }/>
   </div>
 }

@@ -240,3 +240,47 @@ body {
 pre {
   white-space:pre-wrap;
 }
+
+.history-button {
+  text-decoration: underline;
+  background-color: #ffffff;
+  color: #00818f;
+  border: none;
+  border-radius: 3px;
+  padding: 10px 25px;
+  margin: 30px 0 0 0;
+  transition: 0.1s;
+  font-size: 1.1rem;
+  width: fit-content;
+}
+
+.history-button:hover {
+  scale: 1.05;
+  cursor: pointer;
+}
+
+.history-recipe-button {
+  text-decoration: underline;
+  background-color: #ffffff;
+  color: #00818f;
+  border: 1px solid #00818f;
+  border-radius: 3px;
+  padding: 10px 25px;
+  margin: 30px 0;
+  transition: 0.1s;
+  font-size: 1.1rem;
+  width: fit-content;
+}
+
+.history-recipe-button:hover {
+  scale: 1.05;
+  cursor: pointer;
+}
+
+.history-container {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
+  margin: 0 10%;
+  gap: 10px;
+}
