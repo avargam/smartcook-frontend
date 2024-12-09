@@ -37,7 +37,8 @@ export default function MainBody({} : {}) {
       mode: 'cors',
       body: JSON.stringify(postData),
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'Origin': 'https://smartcook-frontend.onrender.com'
       }
     });
     const data = await response.json();
@@ -58,7 +59,8 @@ export default function MainBody({} : {}) {
       mode: 'cors',
       body: JSON.stringify(postData),
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'Origin': 'https://smartcook-frontend.onrender.com'
       }
     });
     const data = await response.json();
@@ -71,7 +73,8 @@ export default function MainBody({} : {}) {
       method: 'GET',
       mode: 'cors',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'Origin': 'https://smartcook-frontend.onrender.com'
       }
     });
     const data = await response.json();
