@@ -34,7 +34,10 @@ export default function MainBody({} : {}) {
 
     const response = await fetch('https://smartcook-backend-deploy.onrender.com/form', {
       method: 'POST',
-      body: JSON.stringify(postData)
+      body: JSON.stringify(postData),
+      headers: {
+        'Content-Type': 'application/json'
+      }
     });
     const data = await response.json();
     console.log(data);
@@ -51,7 +54,10 @@ export default function MainBody({} : {}) {
 
     const response = await fetch('https://smartcook-backend-deploy.onrender.com/recipe', {
       method: 'POST',
-      body: JSON.stringify(postData)
+      body: JSON.stringify(postData),
+      headers: {
+        'Content-Type': 'application/json'
+      }
     });
     const data = await response.json();
     setRecipe(data);
@@ -60,7 +66,10 @@ export default function MainBody({} : {}) {
   const callAPIHistory = async () => {
     
     const response = await fetch('https://smartcook-backend-deploy.onrender.com/history', {
-      method: 'GET'
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json'
+      }
     });
     const data = await response.json();
     console.log(data);
