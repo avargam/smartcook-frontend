@@ -34,6 +34,7 @@ export default function MainBody({} : {}) {
 
     const response = await fetch('https://smartcook-backend-deploy.onrender.com/form', {
       method: 'POST',
+      mode: 'cors',
       body: JSON.stringify(postData),
       headers: {
         'Content-Type': 'application/json'
@@ -54,6 +55,7 @@ export default function MainBody({} : {}) {
 
     const response = await fetch('https://smartcook-backend-deploy.onrender.com/recipe', {
       method: 'POST',
+      mode: 'cors',
       body: JSON.stringify(postData),
       headers: {
         'Content-Type': 'application/json'
@@ -67,6 +69,7 @@ export default function MainBody({} : {}) {
     
     const response = await fetch('https://smartcook-backend-deploy.onrender.com/history', {
       method: 'GET',
+      mode: 'cors',
       headers: {
         'Content-Type': 'application/json'
       }
