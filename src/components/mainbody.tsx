@@ -32,7 +32,7 @@ export default function MainBody({} : {}) {
 
     console.log(postData);
 
-    const response = await fetch('http://localhost:8080/form', {
+    const response = await fetch('https://smartcook-backend.onrender.com/form', {
       method: 'POST',
       body: JSON.stringify(postData)
     });
@@ -49,7 +49,7 @@ export default function MainBody({} : {}) {
 
     console.log(postData);
 
-    const response = await fetch('http://localhost:8080/recipe', {
+    const response = await fetch('https://smartcook-backend.onrender.com/recipe', {
       method: 'POST',
       body: JSON.stringify(postData)
     });
@@ -59,7 +59,7 @@ export default function MainBody({} : {}) {
 
   const callAPIHistory = async () => {
     
-    const response = await fetch('http://localhost:8080/history', {
+    const response = await fetch('https://smartcook-backend.onrender.com/history', {
       method: 'GET'
     });
     const data = await response.json();
