@@ -32,7 +32,7 @@ export default function MainBody({} : {}) {
 
     console.log(postData);
 
-    const response = await fetch('localhost:8080/form', {
+    const response = await fetch('http://localhost:8080/form', {
       method: 'POST',
       mode: 'cors',
       body: JSON.stringify(postData),
@@ -53,7 +53,7 @@ export default function MainBody({} : {}) {
 
     console.log(postData);
 
-    const response = await fetch('localhost:8080/recipe', {
+    const response = await fetch('http://localhost:8080/recipe', {
       method: 'POST',
       mode: 'cors',
       body: JSON.stringify(postData),
@@ -67,7 +67,7 @@ export default function MainBody({} : {}) {
 
   const callAPIHistory = async () => {
     
-    const response = await fetch('localhost:8080/history', {
+    const response = await fetch('http://localhost:8080/history', {
       method: 'GET',
       mode: 'cors',
       headers: {
